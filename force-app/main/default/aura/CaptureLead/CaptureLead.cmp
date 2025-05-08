@@ -1,0 +1,15 @@
+<aura:component controller="LeadController" implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="lead" type="Lead" default="{'sobjectType': 'Lead'}" />
+    <aura:attribute name="message" type="String" />
+
+    <form>
+        <lightning:input aura:id="firstName" label="First Name" value="{!v.lead.FirstName}" required="true" />
+        <lightning:input aura:id="lastName" label="Last Name" value="{!v.lead.LastName}" required="true" />
+        <lightning:input aura:id="company" label="Company" value="{!v.lead.Company}" required="true" />
+        <lightning:input aura:id="email" label="Email" type="email" value="{!v.lead.Email}" required="true" />
+
+        <lightning:button label="Save Lead" variant="brand" onclick="{!c.saveLead}" />
+    </form>
+
+    <lightning:outputText value="{!v.message}" />
+</aura:component>
